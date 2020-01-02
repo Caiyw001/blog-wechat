@@ -1,0 +1,28 @@
+{
+  "name": "blog-wechat",
+  "version": "1.0.0",
+  "description": "学习整理",
+  "main": "serv/app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caiyw001/blog-wechat.git"
+  },
+  "keywords": [
+    "nodejs",
+    ".net",
+    "js"
+  ],
+  "author": "caiyangwei001@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caiyw001/blog-wechat/issues"
+  },
+  "homepage": "https://github.com/Caiyw001/blog-wechat#readme",
+  "dependencies": {
+    "config": "^3.2.4",
+    "koa": "^2.11.0"
+  }
+}
