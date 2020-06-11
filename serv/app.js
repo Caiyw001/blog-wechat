@@ -1,4 +1,6 @@
 const Koa = require('koa');
+const KoaBody = require('koa-body');
+const { router, routerInit } = require('./router');
 const config = require('config');
 const init = require('./init/index');
 const { resTime } = require('./middlewares/visitlog');
@@ -8,11 +10,11 @@ main();
 
 async function main() {
   await init();
+  routerInit();
 
+  app.use(KoaBody());
   app.use(resTime);
-  app.use(async (ctx, next) => {
-    ctx.body = { name: 'caiyw', age: 28, sex: 'man' };
-  })
+  app.use(router.routes());
 
   app.on('error', (error, ctx) => {
     console.log(error);

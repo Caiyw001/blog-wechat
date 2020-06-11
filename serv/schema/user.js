@@ -9,9 +9,9 @@ const UserSchema = new Schema({
   Phone: String,
   Fans: [String]
 }, {
-
+  versionKey: false
 });
 
-const User = mongoose.model('user', UserSchema, 'user', true);
+const User = mongoose.model('user', UserSchema, 'user');
 
 module.exports = User;

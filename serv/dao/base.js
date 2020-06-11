@@ -4,7 +4,7 @@ class Base {
   }
 
   async create(entity) {
-    this.schema.insert(entity);
+    this.schema.create(entity);
   }
 
   async update(where, updateEntity) {

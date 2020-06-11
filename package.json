@@ -24,6 +24,8 @@
   "dependencies": {
     "config": "^3.2.4",
     "koa": "^2.11.0",
-    "mongoose": "^5.8.4"
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.8.4",
+    "thenjs": "^2.1.0"
   }
 }
