@@ -7,6 +7,4 @@ function Person(name, age) {
 let p = new Person('彩洋威', 28);
 p.code='1106655030';
 
-
-
 console.log();
