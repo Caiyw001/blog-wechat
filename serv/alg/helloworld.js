@@ -1,20 +1,35 @@
 const readline = require('readline');
-const { normalize } = require('path');
 const rl = readline.createInterface(process.stdin, process.stdout);
 rl.on('line', function (req) {
-  if (tmp_num === 0) {
-    tmp_num = Number(req);
-  } else {
-    str += req;
-    tmp_num--;
-    if (tmp_num === 0) {
-      console.log(isSuccess(str));
-      rl.close();
-    }
-  }
+  let rlt = min_num(req);
+  console.log(rlt);
+  rl.close();
+
 }).on('close', function () {
   process.exit(0);
 });
+
+function min_num(str) {
+  let num_arr = str.match(/(\d+)/g);
+  let tmp = str.split('-');
+  let sumTmp = 0;
+  let sumMaxIndex = num_arr.length;
+  if (tmp.length !== 1) {
+    let sum_arr = tmp[0].match(/(\d+)/g);
+    sumMaxIndex = sum_arr.length;
+  }
+
+  for (let i = 0; i < num_arr.length; i++) {
+    if (i < sumMaxIndex) {
+      sumTmp += Number(num_arr[i]);
+    } else {
+      sumTmp -= Number(num_arr[i]);
+    }
+  }
+  return sumTmp;
+}
+
+
 
 let tmp_num = 0;
 let str = '';
